@@ -1,0 +1,11 @@
+:host {
+  .wrapper {
+    width: 85%;
+    margin: auto;
+
+    .destinations-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

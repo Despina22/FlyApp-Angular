@@ -1,0 +1,46 @@
+@import "../../../../../styles/variables";
+
+:host {
+  .destination {
+    width: 28%;
+    margin: 20px 0;
+    background-color: $secondary-color;
+
+    .mat-card-header {
+      justify-content: center;
+    }
+
+    .destination-title {
+      font-size: 25px;
+    }
+
+    .destination-img {
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    .destination-description {
+      font-size: 18px;
+      line-height: 25px;
+      color: black;
+    }
+
+    .destination-price {
+      background-color: $white-color;
+      font-size: 20px;
+      color: $primary-color;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .destination-date {
+      font-size: 16px;
+      font-weight: 600;
+      padding-top: 8px;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}

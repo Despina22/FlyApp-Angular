@@ -6,4 +6,31 @@
   margin: 25px;
   box-shadow: 0 20px 30px #555;
   overflow: hidden;
+
+  .header-img {
+    width: 40%;
+    animation: image-float 60s infinite;
+  }
+  @keyframes image-float {
+    0% {
+      transform: translateZ(30rem);
+      opacity: 1;
+    }
+    40% {
+      transform: translateZ(-80rem) translateX(50rem);
+      opacity: 0.9;
+    }
+    70% {
+      transform: translateZ(-700rem) translateX(100rem);
+      opacity: 0.8;
+    }
+    80% {
+      transform: translateZ(-10rem) translateX(30rem);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateZ(30rem);
+      opacity: 1;
+    }
+  }
 }

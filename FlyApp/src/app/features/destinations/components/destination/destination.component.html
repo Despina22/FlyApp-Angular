@@ -1,0 +1,28 @@
+<mat-card
+  class="example-card destination"
+  *ngFor="let destination of destinations"
+>
+  <mat-card-header>
+    <mat-card-title class="destination-title">{{
+      destination.title
+    }}</mat-card-title>
+  </mat-card-header>
+  <img
+    class="destination-img"
+    mat-card-image
+    [src]="destination.imagePath"
+    [alt]="destination.title"
+  />
+  <mat-card-content>
+    <p class="destination-description">
+      {{ destination.description | truncate : 30 }}
+    </p>
+    <p class="destination-price">
+      Price per person: {{ destination.price + "₺" }}
+    </p>
+    <p class="destination-date">
+      Date: {{ destination.fromDate | date : "MM.dd.yyyy" }} -
+      {{ destination.toDate | date : "MM.dd.yyyy" }}
+    </p>
+  </mat-card-content>
+</mat-card>

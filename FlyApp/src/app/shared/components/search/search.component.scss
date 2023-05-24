@@ -1,0 +1,40 @@
+@import "../../../../styles/variables";
+
+:host {
+  .form-input {
+    width: 38%;
+    color: $gray-color;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0px 14px;
+    background-color: $white-color;
+    box-shadow: 5px 5px 5px $light-gray-color;
+    border-radius: 5px;
+    margin-top: 30px;
+
+    .text-label {
+      color: $gray-color;
+    }
+
+    .mat-icon {
+      font-size: 30px;
+      position: absolute;
+      right: 0px;
+      bottom: 10px;
+    }
+  }
+
+  ::ng-deep {
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      padding-bottom: 0px;
+
+      .mat-form-field-infix {
+        border-top: none;
+      }
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+  }
+}

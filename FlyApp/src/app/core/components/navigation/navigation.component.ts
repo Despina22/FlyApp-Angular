@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationService } from '../services/navigation/navigation.service';
+import { NavigationService } from '../../services/navigation/navigation.service';
 import { take, takeUntil } from 'rxjs';
 import { Subject } from 'rxjs';
-import { NavigationLinksService } from '../services/navigation-links/navigation-links.service';
-import { NavigationLink } from '../models/navigation-links.interface';
+import { NavigationLinksService } from '../../services/navigation-links/navigation-links.service';
+import { NavigationLink } from '../../models/navigation-links.interface';
 
 @Component({
   selector: 'app-navigation',
