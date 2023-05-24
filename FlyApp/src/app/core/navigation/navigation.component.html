@@ -1,0 +1,9 @@
+<div *ngIf="isNavigationOpen" class="navbar-wrapper">
+  <nav class="navbar">
+    <div class="nav-list">
+      <a class="nav-link" *ngFor="let navigationLink of navigationLinks">{{
+        navigationLink.name | uppercase
+      }}</a>
+    </div>
+  </nav>
+</div>

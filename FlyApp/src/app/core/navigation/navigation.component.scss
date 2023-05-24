@@ -1,0 +1,29 @@
+@import "../../../styles/variables";
+
+:host {
+  .navbar-wrapper {
+    position: absolute;
+    background-color: $white-color;
+    padding: 0px 5px 0px 10px;
+    border-radius: 2px 5px 5px 2px;
+    box-shadow: 1px 1px 1px $light-gray-color;
+    top: 7.5%;
+    left: 3%;
+    z-index: 100;
+
+    .nav-list {
+      display: flex;
+
+      .nav-link {
+        font-size: 15px;
+        font-weight: 700;
+        color: $gray-color;
+        margin: 10px;
+
+        &:hover {
+          color: #2b81e4;
+        }
+      }
+    }
+  }
+}
