@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DestinationsComponent } from './features/destinations/components/destinations/destinations.component';
-import { DestinationDetailsComponent } from './features/destinations/components/destination-details/destination-details.component';
 
 const appRouter: Routes = [
-  { path: '', component: DestinationsComponent },
+  { path: '', redirectTo: 'destinations', pathMatch: 'full' },
   {
-    path: 'destination/:destinationId',
-    component: DestinationDetailsComponent,
+    path: 'destinations',
+    loadChildren: () =>
+      import('../app/features/destinations/destinations.module').then(
+        (module) => module.DestinationsModule
+      ),
   },
 ];
 
