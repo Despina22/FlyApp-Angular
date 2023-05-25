@@ -1,0 +1,23 @@
+<div class="single-destination">
+  <div class="single-destination-wrapper">
+    <h2 class="single-destination-header">{{ destination.title }}</h2>
+    <div class="single-destination-content">
+      <img
+        [src]="destination.imagePath"
+        [alt]="destination.title"
+        class="single-destination-img"
+      />
+      <p class="single-destination-description">
+        {{ destination.description }}
+      </p>
+    </div>
+    <p class="single-destination-price">
+      Price per Person : {{ destination.price | currency : "TRY" : "₺" }}
+    </p>
+    <p class="single-destination-date">
+      Date: {{ destination.fromDate | date : "MM.dd.yyyy" }} -
+      {{ destination.toDate | date : "MM.dd.yyyy" }}
+    </p>
+    <button class="make-reservation-btn">Make Reservation</button>
+  </div>
+</div>

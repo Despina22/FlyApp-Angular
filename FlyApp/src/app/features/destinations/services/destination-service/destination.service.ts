@@ -14,4 +14,8 @@ export class DestinationService {
   getDestinations(): Observable<Destination[]> {
     return this.http.get<Destination[]>(this.baseApiUrl);
   }
+
+  getDestinationById(id: number) {
+    return this.http.get<Destination>(`${this.baseApiUrl}/${id}`);
+  }
 }

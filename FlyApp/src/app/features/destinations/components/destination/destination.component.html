@@ -2,12 +2,13 @@
   class="example-card destination"
   *ngFor="let destination of destinations"
 >
-  <mat-card-header>
+  <mat-card-header routerLink="destination/{{ destination.id }}">
     <mat-card-title class="destination-title">{{
       destination.title
     }}</mat-card-title>
   </mat-card-header>
   <img
+    routerLink="destination/{{ destination.id }}"
     class="destination-img"
     mat-card-image
     [src]="destination.imagePath"
@@ -18,7 +19,7 @@
       {{ destination.description | truncate : 30 }}
     </p>
     <p class="destination-price">
-      Price per person: {{ destination.price + "₺" }}
+      Price per person: {{ destination.price | currency : "TRY" : "₺" }}
     </p>
     <p class="destination-date">
       Date: {{ destination.fromDate | date : "MM.dd.yyyy" }} -

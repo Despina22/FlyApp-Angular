@@ -1,0 +1,81 @@
+@import "../../../../../styles/variables";
+
+:host {
+  .single-destination {
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    background-color: $secondary-color;
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px $light-gray-color;
+
+    .single-destination-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .single-destination-header {
+        margin: 15px;
+        font-size: 30px;
+        cursor: default;
+        border-bottom: 2px solid rgb(119, 119, 119, 0.6);
+
+        &:hover {
+          color: $light-gray-color;
+        }
+      }
+
+      .single-destination-content {
+        display: flex;
+        justify-content: space-between;
+
+        .single-destination-img {
+          width: 35%;
+          height: 20%;
+          margin: 0px 20px;
+        }
+
+        .single-destination-description {
+          font-size: 20px;
+          margin: 0px 20px;
+        }
+      }
+
+      .single-destination-price {
+        font-size: 20px;
+        margin: 10px;
+        padding: 10px;
+        background-color: $white-color;
+        width: 100%;
+        text-align: center;
+        color: #2b81e4;
+        border-top: 1px solid rgb(8, 8, 8, 0.6);
+        border-bottom: 1px solid rgba(8, 8, 8, 0.6);
+        letter-spacing: 1px;
+      }
+
+      .single-destination-date {
+        font-size: 22px;
+        cursor: default;
+        margin-top: 5px;
+      }
+      .make-reservation-btn {
+        background-color: $gray-color;
+        color: $white-color;
+        border: none;
+        font-size: 18px;
+        padding: 8px 30px;
+        margin: 15px 10px 20px;
+        border-radius: 3px;
+        box-shadow: 3px 3px 3px $light-gray-color;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $light-gray-color;
+        }
+      }
+    }
+  }
+}
