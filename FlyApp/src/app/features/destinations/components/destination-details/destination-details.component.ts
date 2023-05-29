@@ -10,26 +10,36 @@ import { take } from 'rxjs';
   styleUrls: ['./destination-details.component.scss'],
 })
 export class DestinationDetailsComponent implements OnInit {
-  destinationId!: number;
-  destination!: Destination;
+  destinationId: number = 0;
+  destination: Destination = {
+    id: 0,
+    title: '',
+    imagePath: '',
+    description: '',
+    price: 0,
+    fromDate: '',
+    toDate: '',
+  };
 
   constructor(
-    private activateRouter: ActivatedRoute,
+    private activateRoute: ActivatedRoute,
     private destinationService: DestinationService
   ) {}
 
   ngOnInit(): void {
     this.destinationId =
-      +this.activateRouter.snapshot.paramMap.get('destinationId')!;
+      +this.activateRoute.snapshot.paramMap.get('destinationId')!;
     this.getDestinationDetails();
   }
 
   getDestinationDetails() {
-    this.destinationService
-      .getDestinationById(this.destinationId)
-      .pipe(take(1))
-      .subscribe((data) => {
-        this.destination = data;
-      });
+    if (this.destinationId !== null) {
+      this.destinationService
+        .getDestinationById(this.destinationId)
+        .pipe(take(1))
+        .subscribe((data) => {
+          this.destination = data;
+        });
+    }
   }
 }

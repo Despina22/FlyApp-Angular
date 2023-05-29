@@ -1,0 +1,42 @@
+@import "../../../../../styles/variables";
+
+:host {
+  .reservation-content-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    .reservation-form-header {
+      display: flex;
+      justify-content: center;
+
+      .reservation-title {
+        font-size: 30px;
+        color: $gray-color;
+        margin: 20px 0px;
+      }
+    }
+
+    .input-element {
+      font-size: 16px;
+      margin: 10px 30px;
+      color: $gray-color;
+    }
+
+    .card-action {
+      display: flex;
+      justify-content: center;
+
+      .create-btn {
+        font-size: 22px;
+        padding: 10px 30px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px $light-gray-color;
+      }
+    }
+  }
+}
