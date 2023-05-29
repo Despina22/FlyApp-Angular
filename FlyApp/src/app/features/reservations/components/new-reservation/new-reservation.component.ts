@@ -6,6 +6,7 @@ import { DestinationService } from 'src/app/features/destinations/services/desti
 import { ReservationService } from '../../services/reservation.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from 'src/app/shared/components/snackbar/snackbar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-reservation',
@@ -41,7 +42,8 @@ export class NewReservationComponent implements OnInit {
   constructor(
     private destinationService: DestinationService,
     private newReservation: ReservationService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -64,6 +66,7 @@ export class NewReservationComponent implements OnInit {
       .pipe(take(1))
       .subscribe(() => {
         this.openSnackBar('You are successfully registered');
+        this.router.navigate(['/']);
       });
   }
 
