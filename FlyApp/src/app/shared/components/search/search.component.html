@@ -1,5 +1,5 @@
 <mat-form-field class="form-input" [floatLabel]="'never'">
   <mat-label class="text-label">Search by Book Name</mat-label>
   <input type="search" matInput name="search" #searchField />
-  <mat-icon>search</mat-icon>
+  <mat-icon (click)="onSearch(searchField.value)">search</mat-icon>
 </mat-form-field>

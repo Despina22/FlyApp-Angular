@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DestinationService } from 'src/app/features/destinations/services/destination-service/destination.service';
 
 @Component({
   selector: 'app-search',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  constructor() {}
+  constructor(private destinationService: DestinationService) {}
 
   ngOnInit(): void {}
+
+  onSearch(searchValue: string) {
+    this.destinationService.searchValue$.next(searchValue);
+  }
 }

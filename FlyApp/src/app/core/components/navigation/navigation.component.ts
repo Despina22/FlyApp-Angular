@@ -4,6 +4,7 @@ import { take, takeUntil } from 'rxjs';
 import { Subject } from 'rxjs';
 import { NavigationLinksService } from '../../services/navigation-links/navigation-links.service';
 import { NavigationLink } from '../../models/navigation-links.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +18,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   constructor(
     private navigationService: NavigationService,
-    private navigationLinksService: NavigationLinksService
+    private navigationLinksService: NavigationLinksService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +38,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
       .getNavigationLinks()
       .pipe(take(1))
       .subscribe((data) => (this.navigationLinks = data));
+  }
+
+  navigation(navigationLink: NavigationLink) {
+    if (navigationLink.name === 'home') {
+      this.router.navigate(['/']);
+    } else if (navigationLink.name === 'reservation') {
+      this.router.navigate(['/reservation']);
+    }
   }
 
   ngOnDestroy(): void {
