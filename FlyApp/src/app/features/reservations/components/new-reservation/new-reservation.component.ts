@@ -4,6 +4,8 @@ import { take } from 'rxjs';
 import { Destination } from 'src/app/features/destinations/models/destination.interface';
 import { DestinationService } from 'src/app/features/destinations/services/destination-service/destination.service';
 import { ReservationService } from '../../services/reservation.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarComponent } from 'src/app/shared/components/snackbar/snackbar.component';
 
 @Component({
   selector: 'app-new-reservation',
@@ -13,6 +15,7 @@ import { ReservationService } from '../../services/reservation.service';
 export class NewReservationComponent implements OnInit {
   title: string = 'New Reservation';
   destinations?: Destination[];
+  durationInSeconds = 5;
 
   reservationForm: FormGroup = new FormGroup({
     firstName: new FormControl('', [
@@ -37,7 +40,8 @@ export class NewReservationComponent implements OnInit {
 
   constructor(
     private destinationService: DestinationService,
-    private newReservation: ReservationService
+    private newReservation: ReservationService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -55,6 +59,20 @@ export class NewReservationComponent implements OnInit {
 
   onReservation() {
     const reservation = { ...this.reservationForm.value };
-    this.newReservation.newReservation(reservation).pipe(take(1)).subscribe();
+    this.newReservation
+      .newReservation(reservation)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.openSnackBar('You are successfully registered');
+      });
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      data: { message: message },
+      duration: this.durationInSeconds * 1000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   }
 }

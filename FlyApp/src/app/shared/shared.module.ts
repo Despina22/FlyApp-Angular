@@ -1,14 +1,22 @@
-import { MatIconModule } from '@angular/material/icon';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './components/search/search.component';
-import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SearchComponent } from './components/search/search.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
-  declarations: [SearchComponent, TruncatePipe],
-  imports: [CommonModule, FormsModule, MatInputModule, MatIconModule],
+  declarations: [SearchComponent, TruncatePipe, SnackbarComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatSnackBarModule,
+  ],
   exports: [SearchComponent, TruncatePipe],
 })
 export class SharedModule {}

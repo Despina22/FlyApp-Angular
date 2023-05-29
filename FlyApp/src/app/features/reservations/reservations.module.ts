@@ -8,6 +8,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReservationsRoutingModule } from './reservations-routing.module';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const COMPONENTS = [NewReservationComponent];
 
@@ -23,6 +24,7 @@ const COMPONENTS = [NewReservationComponent];
     MatSelectModule,
     MatInputModule,
     ReservationsRoutingModule,
+    MatSnackBarModule,
   ],
 })
 export class ReservationsModule {}
